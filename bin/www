@@ -7,7 +7,7 @@
 const app = require("../app");
 const debug = require("debug")("log-dashboard:server");
 const http = require("http");
-const {WebSocketServer} = require("ws");
+const WebSocket = require("ws");
 
 
 /**
@@ -22,7 +22,7 @@ app.set("port", port);
  */
 
 const server = http.createServer(app);
-const wss = new WebSocketServer({server});
+const wss = new WebSocket.Server({server});
 
 /**
  * Listen on provided port, on all network interfaces.
